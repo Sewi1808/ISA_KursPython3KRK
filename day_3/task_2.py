@@ -3,7 +3,7 @@
 
 num = input("Give me a number to check: ")
 
-# TODO: sprawdz czy podane dane to liczba
+#  sprawdz czy podane dane to liczba
 if num.isdigit():
     x = int(num) % 2
     if x > 0:
