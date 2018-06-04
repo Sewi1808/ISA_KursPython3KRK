@@ -1,14 +1,14 @@
 #  napisz program ktory sprawdzi ktory sprawdzi czy liczba jest parzysta
 #  liczba do sprawdzenia jest podawana przez uzyszkodnika
 
-num = int(input("Give me a number to check: "))
-x = num % 2
+num = input("Give me a number to check: ")
 
-
-if x > 0:
-    print(num, "is odd number")
+# TODO: sprawdz czy podane dane to liczba
+if num.isdigit():
+    x = int(num) % 2
+    if x > 0:
+        print(num, "is odd number")
+    else:
+        print(num, "is even number")
 else:
-    print(num, "is even number")
-
-
-
+    print("provided data isn't number")
