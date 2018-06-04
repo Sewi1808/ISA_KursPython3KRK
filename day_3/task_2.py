@@ -4,7 +4,7 @@
 num = input("Give me a number to check: ")
 
 #  sprawdz czy podane dane to liczba
-if num.isdigit():
+if num.lstrip('-+').isdigit():
     x = int(num) % 2
     if x > 0:
         print(num, "is odd number")
