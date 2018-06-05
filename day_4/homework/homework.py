@@ -6,10 +6,10 @@
 #####
 
 
-# TODO: program, ktory wypisze liczby od 0 do 20 poza liczbami podzielnymi przez 4
-# TODO: continue
+# DONE: program, ktory wypisze liczby od 0 do 20 poza liczbami podzielnymi przez 4
+# DONE: continue
 
-# program obliczajacy liczbe liter i cyfr w stringu
+# DONE: program obliczajacy liczbe liter i cyfr w stringu
 
 ilosc_liter = str(len("Tomek36"))
 print(ilosc_liter)

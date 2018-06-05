@@ -1,5 +1,5 @@
-# TODO: program, ktory wypisze liczby od 0 do 20 poza liczbami podzielnymi przez 4
-# TODO: continue
+# DONE: program, ktory wypisze liczby od 0 do 20 poza liczbami podzielnymi przez 4
+# DONE: continue
 
 x = range(0,21)
 #print(list(x))
