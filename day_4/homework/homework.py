@@ -14,7 +14,7 @@
 ilosc_liter = str(len("Tomek36"))
 print(ilosc_liter)
 
-# program wypisujący tabliczkę mnozenia (1 do 10) dla podanej przez użytkownika liczby
+# DONE: program wypisujący tabliczkę mnozenia (1 do 10) dla podanej przez użytkownika liczby
 # np: 3 x 1 = 3
 #     3 x 2 = 6
 #     3 x 3 = 9 itp
