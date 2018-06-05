@@ -1,13 +1,13 @@
 # DONE: Narysuj piramidę Mario - jako input - wysokość piramidy
-# np. piramida wysokości 3 ma wyglądać:
+# DONE: np. piramida wysokości 3 ma wyglądać:
 
   #
  ###
 #####
 
 
-# program, ktory wypisze liczby od 0 do 20 poza liczbami podzielnymi przez 4
-# continue
+# TODO: program, ktory wypisze liczby od 0 do 20 poza liczbami podzielnymi przez 4
+# TODO: continue
 
 # program obliczajacy liczbe liter i cyfr w stringu
 
