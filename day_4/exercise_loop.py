@@ -1,6 +1,6 @@
 num = int(input("Podaj gorny zakres: \n"))
 
-r = range(num)
+r = range(num + 1)
 even = []
 odd = []
 o = int(0)
