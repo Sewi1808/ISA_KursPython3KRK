@@ -1,12 +1,34 @@
-import sys
 import random
-manual = "First type 2 for game start,\n then Type 1 for rock\n Type 2 for paper\n Type 3 for scissors\n type Q for quit"
+
+print('''Please pick one:
+            rock
+            paper
+            scissors''')
 
 while True:
-    pl1=input("Player 1 please provide your choice[r/p/s]: \n")
-    pl2=input("Player 2 please provide your choice[r/p/s]: \n")
+    game_dict = {'rock': 1, 'scissors': 2, 'paper': 3}
+    player_a = str(input("Player a: \n"))
+#    player_b = str(input("Player b: \n"))
+    a = game_dict.get(player_a)
+    b = random.randrange(1,3,1)
+    print(b)
+    dif = a - b
 
-    for one in pl1
-        if one =='r' and pl2=='s':
-            print("Player1 won!")
-        elif one == 's' and pl
+    if dif in [-1,2]:
+        print('player a wins')
+        if str(input('Do you wanna to play another game? y/n:\n')).lower() == 'y':
+            continue
+        else:
+            print('game over')
+            break
+    elif dif in [-2,1]:
+        print('player b wins.')
+        if str(input('Do you wanna to play another game? y/n:\n')).lower() == 'y':
+            continue
+        else:
+            print('game over')
+            break
+    else:
+        print('Draw')
+        if str(input('Do you wanna to play another game? y/n:\n')).lower() == 'y':
+            continue
