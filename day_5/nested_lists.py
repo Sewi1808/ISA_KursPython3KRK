@@ -12,3 +12,9 @@ zakupy_lipiec = copy.deepcopy(zakupy_czerwiec)
 zakupy_lipiec[1].append('ogorek')
 print(zakupy_lipiec)
 print(zakupy_czerwiec)
+warzywa_lipiec = zakupy_lipiec[1]
+
+for elementy in zakupy_lipiec:
+    for towar in elementy:
+        print(towar)
+    print()
