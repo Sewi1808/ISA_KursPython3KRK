@@ -1,6 +1,6 @@
-# zadania do zrobienia na weekend, nie na czwartek!!!!!!!!!!!!!!!!!
+#  zadania do zrobienia na weekend, nie na czwartek!!!!!!!!!!!!!!!!!
 
-# napisz program sumujący wszystkie elementy w liscie
+# DONE: napisz program sumujący wszystkie elementy w liscie
 
 # znajdz najwiekszy / najmniejszy element w liscie
 
