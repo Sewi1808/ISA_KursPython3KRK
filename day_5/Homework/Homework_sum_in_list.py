@@ -1,0 +1,1 @@
+# napisz program sumujący wszystkie elementy w liscie
