@@ -32,11 +32,18 @@ def search_menu():
             print("Going back to main menu")
             main_menu()
         elif search_menu_input == '1':
-            print_book()
+            for book_id, book_info in book.items():
+                print("\nBook ID:", book_id)
+                for key in book_info:
+                    print(key + ":", book_info[key])
             print("\n\n")
             search_menu()
         elif search_menu_input == '2':
             print(f"Your phone book list have {len(book)} entry(ies)\n")
+            search_menu()
+        elif search_menu_input == '3':
+            search_name = input("Provide name to find: \n")
+            search_menu()
     else:
         wrong_input()
     pass  # untill finish
