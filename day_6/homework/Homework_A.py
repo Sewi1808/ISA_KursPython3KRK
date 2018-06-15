@@ -19,13 +19,13 @@ second_names = ["_"]
 phone_numbers = ["_"]
 zipped = []
 
-"""
-Function "ENTRY" responsible for add single entry to "zipped" list which is currently my "database" 
-Variable first_name/second_name/phone_number are responsible exactly same as named.
-"""
-
 
 def entry():
+
+    """
+    Function "ENTRY" responsible for add single entry to "zipped" list which is currently my "database"
+    Variable first_name/second_name/phone_number are responsible exactly same as named.
+    """
 
     first_name = input("Provide first name: \n")
     second_name = input("Provide second name: \n")
