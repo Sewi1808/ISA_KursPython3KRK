@@ -11,19 +11,31 @@
 # oraz funkcji. I jeśli damy radę to możemy postarać się stworzyć moduły z
 # oddzielnymi funkcjonalnościami.
 ######################################################################################################################
+import sys
 """Phone book program"""
-
+main_menu_options = ['Q', '1', '2', '3']
+y_n_option = ['y','n']
 book = {0: {'First Name': '_', 'Second Name': '_', 'Age': '_', 'Phone Number': '_', 'City': '_', 'Postal Code': '_',
             'Street': '_'}, }
+#done
+def wrong_input():
+    print("Invalid input provided, do you want continue(y/n): \n")
+    user_input = input().lower()
+    while user_input not in y_n_option:
+        wrong_input()
+    else:
+        main_menu()
 
+#done
 def print_book():
     for line in book:
         print(line, book[line], "print book")
 
+#done
 def entry():
     """
-    Function "ENTRY" responsible for add single entry to "placeholder" dictionary which is currently my "database"
-    Variable first_name/second_name/phone_number are responsible exactly same as named.
+    Function "ENTRY" responsible for add single entry to "book" dictionary which is currently my "database"
+    Variable first_name/second_name/phone_number/etc are responsible exactly same as named.
     """
 
     first_name = input("Provide first name: \n")
@@ -52,14 +64,35 @@ def entry():
                            'Phone Number': phone_number, 'City': city, 'Postal Code': postal_code,
                            'Street': street},
 
-#
+#work in progress
+def main_menu():    # work in progress
+    user_first_input = input("Q - Quit\n1 - search menu\n2 - append menu\n3 - "
+                             "delete menu\n YOUR CHOICE (Q/1/2/3):\n").upper()
+    if user_first_input not in main_menu_options:
+        comunicate1 = input("Wrong input provided, do you want to continue (y/n):\n").lower()
+        while comunicate1 in y_n_option:
+            if comunicate1 == 'y':
+                main_menu()
+            elif comunicate1 == 'n':
+                sys.exit()
+            else:
+                wrong_input()
+    elif user_first_input == 'Q':
+        sys.exit()
+    elif user_first_input == '1':
+        pass    # placeholder
+    elif user_first_input == '2':
+        entry()
+        print_book()
+        main_menu()
+    else:
+        main_menu()
+
+main_menu()
 # entry()
 # print_book()
 # entry()
 # print_book()
-
-
-
 
 # # def tpye_of_search()
 # def search():
@@ -97,5 +130,3 @@ def entry():
         # print("please input 1 or 2 according to action menu")
         # search_menu()
         #
-
-
