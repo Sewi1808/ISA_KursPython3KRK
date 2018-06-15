@@ -13,7 +13,6 @@
 ######################################################################################################################
 """Phone book program"""
 
-
 first_names = ["_"]
 second_names = ["_"]
 phone_numbers = ["_"]
@@ -21,7 +20,6 @@ zipped = []
 
 
 def entry():
-
     """
     Function "ENTRY" responsible for add single entry to "zipped" list which is currently my "database"
     Variable first_name/second_name/phone_number are responsible exactly same as named.
@@ -33,9 +31,15 @@ def entry():
     global zipped
 
     if first_name == second_name == phone_number == "":  # check if user provide 3 times nothing, if yes just pass
+        print("No entry data provided")
         pass
     elif first_name in first_names and second_name in second_names and phone_number in phone_numbers:
         print("Mentioned user already exist")
+        user_already_exist = input("Do you want continue(y/n): \n").lower()
+        if user_already_exist == 'y':
+            entry()
+        else:
+            pass
 
     else:
 
@@ -51,5 +55,42 @@ def print_zipped():
         print(line)
 
 
-# entry()
-# print_zipped()
+# def tpye_of_search()
+def search():
+    search_cond = input("Type fraze: \n")
+    idx_search = None
+    if search_cond in first_names:
+        idx_search = first_names.index(search_cond)
+    elif search_cond in second_names:
+        idx_search = second_names.index(search_cond)
+    elif search_cond in phone_numbers:
+        idx_search = phone_numbers.index(search_cond)
+    else:
+        print("Fraze was not found!")
+
+
+# print(zipped.index(search_cond)
+
+# if search_cond in zipped:
+#     for _ in zipped:
+#         if _ in zipped:
+#             print(_)
+
+
+def search_menu():
+    print("choose action:\n 1 - show full contact list \n 2 - search in contact list")
+    action = input("Input action: \n")
+    if action == 1:
+        print_zipped()
+    elif action == 2:
+        pass  # placeholder na szukajke
+    else:
+        pass
+
+        # action != 1 or action != 2:
+        # print("please input 1 or 2 according to action menu")
+        # search_menu()
+        #
+
+
+entry()
