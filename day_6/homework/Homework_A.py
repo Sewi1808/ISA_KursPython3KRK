@@ -12,28 +12,44 @@
 # oddzielnymi funkcjonalnościami.
 ######################################################################################################################
 """Phone book program"""
+
+
 first_names = ["_"]
 second_names = ["_"]
 phone_numbers = ["_"]
-phone_book = [first_names, second_names, phone_numbers]
-zipped = list(enumerate(zip(first_names,second_names, phone_numbers)))
+zipped = []
+
+"""
+Function "ENTRY" responsible for add single entry to "zipped" list which is currently my "database" 
+Variable first_name/second_name/phone_number are responsible exactly same as named.
+"""
 
 
-def entry(first_name="_", second_name="_", phone_number="_"):
-    first_name=input("Provide first name: \n")
-    second_name=input("Provide second name: \n")
-    phone_numbers=input("Provide phone number: \n")
+def entry():
 
-    # if first_name == second_name == phone_number == "_":
-    #     pass
-    # elif first_name in first_names and second_name in second_names and phone_number in phone_numbers:
-    #     print("Mentioned user already exist")
-    #
-    # else:
+    first_name = input("Provide first name: \n")
+    second_name = input("Provide second name: \n")
+    phone_number = input("Provide phone number: \n")
+    global zipped
 
-    first_names.append(first_name)
-    second_names.append(second_name)
-    phone_numbers.append(phone_number)
-entry()
+    if first_name == second_name == phone_number == "":  # check if user provide 3 times nothing, if yes just pass
+        pass
+    elif first_name in first_names and second_name in second_names and phone_number in phone_numbers:
+        print("Mentioned user already exist")
 
-print(zipped)
+    else:
+
+        first_names.append(first_name)
+        second_names.append(second_name)
+        phone_numbers.append(phone_number)
+        zipped = list(enumerate(zip(first_names, second_names, phone_numbers)))
+        return True
+
+
+def print_zipped():
+    for line in zipped:
+        print(line)
+
+
+# entry()
+# print_zipped()
