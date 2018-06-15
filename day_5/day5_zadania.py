@@ -2,7 +2,7 @@
 
 # DONE: napisz program sumujący wszystkie elementy w liscie
 
-# znajdz najwiekszy / najmniejszy element w liscie
+# DONE: znajdz najwiekszy / najmniejszy element w liscie
 
 # program wydający resztę z podanych monet []
 

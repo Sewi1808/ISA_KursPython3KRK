@@ -15,16 +15,43 @@ import sys
 """Phone book program"""
 main_menu_options = ['Q', '1', '2', '3']
 y_n_option = ['y','n']
+search_menu_options = ['1', '2', '3', '4', '5', '6', 'Q', 'B']
 book = {0: {'First Name': '_', 'Second Name': '_', 'Age': '_', 'Phone Number': '_', 'City': '_', 'Postal Code': '_',
             'Street': '_'}, }
-#done
+#work in progress: 1 - search menu
+def search_menu():
+    search_menu_input = input("Choose action:\n"
+                              "1 - show whole list\n2 - len of list\n3 - search name \n"
+                              "4 - search second name\n5 - search phone number\n6 - search city\n"
+                              "Q - quit\nB - Back to main menu\n\nYour choice:\n").upper()
+    if search_menu_input in search_menu_options:
+        if search_menu_input == 'Q':
+            print('sys exit search menu')
+            sys.exit()
+        elif search_menu_input == 'B':
+            print("Going back to main menu")
+            main_menu()
+        elif search_menu_input == '1':
+            print_book()
+            print("\n\n")
+            search_menu()
+        elif search_menu_input == '2':
+            print(f"Your phone book list have {len(book)} entry(ies)\n")
+    else:
+        wrong_input()
+    pass  # untill finish
+# done
 def wrong_input():
     print("Invalid input provided, do you want continue(y/n): \n")
     user_input = input().lower()
-    while user_input not in y_n_option:
-        wrong_input()
+    if user_input in y_n_option:
+        if user_input == 'y':
+            main_menu()
+        else:
+            print("sys exit in wrong_input")
+            sys.exit()
     else:
-        main_menu()
+        wrong_input()
 
 #done
 def print_book():
@@ -64,23 +91,18 @@ def entry():
                            'Phone Number': phone_number, 'City': city, 'Postal Code': postal_code,
                            'Street': street},
 
-#work in progress
+#work in progress: waiting for other features
 def main_menu():    # work in progress
     user_first_input = input("Q - Quit\n1 - search menu\n2 - append menu\n3 - "
                              "delete menu\n YOUR CHOICE (Q/1/2/3):\n").upper()
     if user_first_input not in main_menu_options:
-        comunicate1 = input("Wrong input provided, do you want to continue (y/n):\n").lower()
-        while comunicate1 in y_n_option:
-            if comunicate1 == 'y':
-                main_menu()
-            elif comunicate1 == 'n':
-                sys.exit()
-            else:
-                wrong_input()
+        wrong_input()
+
     elif user_first_input == 'Q':
+        print("sys exit in main_menu=>user_first_input = Q")
         sys.exit()
     elif user_first_input == '1':
-        pass    # placeholder
+        search_menu()
     elif user_first_input == '2':
         entry()
         print_book()
@@ -130,3 +152,6 @@ main_menu()
         # print("please input 1 or 2 according to action menu")
         # search_menu()
         #
+
+
+print("finish")
