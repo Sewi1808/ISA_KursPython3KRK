@@ -1,16 +1,3 @@
-# Zadania domowe:
-# a. Napisz program, który będzie bazą kontaktów, program ma pytać
-# użytkownika, co chce zrobić, dając mu minimum te opcje: dodanie imienia,
-# usuniecie imienia, sprawdzenie czy imię jest w bazie, usunięcie imienia,
-# sprawdzenie ilości imion w bazie oraz zakończenie programu.
-# Jeśli czujesz się pewniej to postaraj się aby użytkownik mógł podać więcej
-# szczegółów np. nazwisko, nr telefonu, adres itp.
-# Program ten będziemy pomału rozbudowywać, w kolejnych tygodniach
-# Oczywiście piszemy już „Czysty kod” stosując się do konwencji
-# Python’owych: piszemy docstringi, właściwe i znaczące nazwy zmiennych
-# oraz funkcji. I jeśli damy radę to możemy postarać się stworzyć moduły z
-# oddzielnymi funkcjonalnościami.
-######################################################################################################################
 import sys
 """Phone book program"""
 
@@ -18,25 +5,30 @@ import sys
 main_menu_options = ['Q', '1', '2', '3']
 y_n_option = ['y', 'n']
 search_menu_options = ['1', '2', '3', '4', '5', '6', 'Q', 'B']
+""" dictionary "book" is an temporary solution, will be replaced by save/read file feature"""
 book = {
         0: {'First Name': '_', 'Second Name': '_', 'Age': '_', 'Phone Number': '_', 'City': '_', 'Postal Code': '_',
             'Street': '_'},
-        1: {'First Name': 'Adam', 'Second Name': 'ASDF', 'Age': '35', 'Phone Number': '_', 'City': '_', 'Postal Code': '_',
+        1: {'First Name': 'Adam', 'Second Name': 'ASDF', 'Age': '35', 'Phone Number': '_',
+            'City': '_', 'Postal Code': '_',
             'Street': '_'},
-        2: {'First Name': 'Aleksandra', 'Second Name': 'QWE', 'Age': '31', 'Phone Number': '_', 'City': '_', 'Postal Code': '_',
+        2: {'First Name': 'Aleksandra', 'Second Name': 'QWE', 'Age': '31', 'Phone Number': '_',
+            'City': '_', 'Postal Code': '_',
             'Street': '_'},
-        3: {'First Name': 'Sebastian', 'Second Name': 'Sza', 'Age': '31', 'Phone Number': '_', 'City': '_', 'Postal Code': '_',
+        3: {'First Name': 'Sebastian', 'Second Name': 'Sza', 'Age': '31', 'Phone Number': '_',
+            'City': '_', 'Postal Code': '_',
             'Street': '_'},
-        4: {'First Name': 'Adam', 'Second Name': 'Sza', 'Age': '51', 'Phone Number': '_', 'City': '_', 'Postal Code': '_',
-            'Street': '_'},
+        4: {'First Name': 'Adam', 'Second Name': 'Sza', 'Age': '51', 'Phone Number': '_',
+            'City': '_', 'Postal Code': '_', 'Street': '_'},
         }
 
 """Functions"""
 
 
-# DONE
 def search():
-    search_result = []
+    """Search module, looks for value in every nested dictionary, returns value of parent dictionary,
+    allow program to print full data of entry"""
+    search_result = []  #storage of "parent dictionaries"
     search_data = input("Provide data to find: \n")
     for i in book:
         for k in book[i].items():
@@ -45,8 +37,11 @@ def search():
 
     for i in search_result:
         print(book[i])
-# work in progress: 1 - search menu
+
+
 def search_menu():
+    """choose action menu, description according to input string 1 - print whole dictionary, 2 len of dictionary,
+    3 data search, Q - quit, B - back to main menu #TODO: 4 which will stand for delete from dictionary"""
     search_menu_input = input("Choose action:\n"
                               "1 - show whole list\n2 - len of list\n3 - search data \n"
                               "Q - quit\nB - Back to main menu\n\nYour choice:\n").upper()
@@ -72,9 +67,10 @@ def search_menu():
             search_menu()
     else:
         wrong_input()
-    pass  # untill finish
-# done
+
+
 def wrong_input():
+    """module which stand for 'wrong input' message for user"""
     print("Invalid input provided, do you want continue(y/n): \n")
     user_input = input().lower()
     if user_input in y_n_option:
@@ -86,12 +82,13 @@ def wrong_input():
     else:
         wrong_input()
 
-#done
-def print_book():
-    for line in book:
-        print(line, book[line], "print book")
 
-#done
+def print_book():
+    """module stands for printing address book line by line"""
+    for line in book:
+        print(line, book[line])
+
+
 def entry():
     """
     Function "ENTRY" responsible for add single entry to "book" dictionary which is currently my "database"
@@ -122,10 +119,11 @@ def entry():
     else:
         book[len(book)] = {'First Name': first_name, 'Second Name': second_name, 'Age': age,
                            'Phone Number': phone_number, 'City': city, 'Postal Code': postal_code,
-                           'Street': street},
+                           'Street': street}
 
-#work in progress: waiting for other features
-def main_menu():    # work in progress
+
+def main_menu():
+    """Main menu"""
     user_first_input = input("Q - Quit\n1 - search menu\n2 - append menu\n3 - "
                              "delete menu\n YOUR CHOICE (Q/1/2/3):\n").upper()
     if user_first_input not in main_menu_options:
@@ -146,47 +144,3 @@ def main_menu():    # work in progress
 
 """Executive part"""
 main_menu()
-# entry()
-# print_book()
-# entry()
-# print_book()
-
-# # def tpye_of_search()
-# def search():
-#     search_cond = input("Type fraze: \n")
-#     idx_search = None
-#     if search_cond in first_names:
-#         idx_search = first_names.index(search_cond)
-#     elif search_cond in second_names:
-#         idx_search = second_names.index(search_cond)
-#     elif search_cond in phone_numbers:
-#         idx_search = phone_numbers.index(search_cond)
-#     else:
-#         print("Fraze was not found!")
-
-
-# print(zipped.index(search_cond)
-
-# if search_cond in zipped:
-#     for _ in zipped:
-#         if _ in zipped:
-#             print(_)
-
-#
-# def search_menu():
-#     print("choose action:\n 1 - show full contact list \n 2 - search in contact list")
-#     action = input("Input action: \n")
-#     if action == 1:
-#         print_zipped()
-#     elif action == 2:
-#         pass  # placeholder na szukajke
-#     else:
-#         pass
-
-        # action != 1 or action != 2:
-        # print("please input 1 or 2 according to action menu")
-        # search_menu()
-        #
-
-
-print("finish")
