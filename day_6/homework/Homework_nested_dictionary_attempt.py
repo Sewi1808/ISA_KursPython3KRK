@@ -18,15 +18,37 @@ import sys
 main_menu_options = ['Q', '1', '2', '3']
 y_n_option = ['y', 'n']
 search_menu_options = ['1', '2', '3', '4', '5', '6', 'Q', 'B']
-book = {0: {'First Name': '_', 'Second Name': '_', 'Age': '_', 'Phone Number': '_', 'City': '_', 'Postal Code': '_',
-            'Street': '_'}, }
+book = {
+        0: {'First Name': '_', 'Second Name': '_', 'Age': '_', 'Phone Number': '_', 'City': '_', 'Postal Code': '_',
+            'Street': '_'},
+        1: {'First Name': 'Adam', 'Second Name': 'ASDF', 'Age': '35', 'Phone Number': '_', 'City': '_', 'Postal Code': '_',
+            'Street': '_'},
+        2: {'First Name': 'Aleksandra', 'Second Name': 'QWE', 'Age': '31', 'Phone Number': '_', 'City': '_', 'Postal Code': '_',
+            'Street': '_'},
+        3: {'First Name': 'Sebastian', 'Second Name': 'Sza', 'Age': '31', 'Phone Number': '_', 'City': '_', 'Postal Code': '_',
+            'Street': '_'},
+        4: {'First Name': 'Adam', 'Second Name': 'Sza', 'Age': '51', 'Phone Number': '_', 'City': '_', 'Postal Code': '_',
+            'Street': '_'},
+        }
 
 """Functions"""
+
+
+# DONE
+def search():
+    search_result = []
+    search_data = input("Provide data to find: \n")
+    for i in book:
+        for k in book[i].items():
+            if k[1] == search_data:
+                search_result.append(i)
+
+    for i in search_result:
+        print(book[i])
 # work in progress: 1 - search menu
 def search_menu():
     search_menu_input = input("Choose action:\n"
-                              "1 - show whole list\n2 - len of list\n3 - search name \n"
-                              "4 - search second name\n5 - search phone number\n6 - search city\n"
+                              "1 - show whole list\n2 - len of list\n3 - search data \n"
                               "Q - quit\nB - Back to main menu\n\nYour choice:\n").upper()
     if search_menu_input in search_menu_options:
         if search_menu_input == 'Q':
@@ -46,7 +68,7 @@ def search_menu():
             print(f"Your phone book list have {len(book)} entry(ies)\n")
             search_menu()
         elif search_menu_input == '3':
-            search_name = input("Provide name to find: \n")
+            search()
             search_menu()
     else:
         wrong_input()

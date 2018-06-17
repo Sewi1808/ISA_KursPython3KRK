@@ -1,3 +1,4 @@
+
 book = {
         0: {'First Name': '_', 'Second Name': '_', 'Age': '_', 'Phone Number': '_', 'City': '_', 'Postal Code': '_',
             'Street': '_'},
@@ -7,10 +8,20 @@ book = {
             'Street': '_'},
         3: {'First Name': 'Sebastian', 'Second Name': 'Sza', 'Age': '31', 'Phone Number': '_', 'City': '_', 'Postal Code': '_',
             'Street': '_'},
+        4: {'First Name': 'Adam', 'Second Name': 'Sza', 'Age': '51', 'Phone Number': '_', 'City': '_', 'Postal Code': '_',
+            'Street': '_'},
         }
 
 """szukajka"""
-for dicts in book:
-    for entry in book[dicts]:
-        if book[dicts][entry][ 'First Name' == 'Adam']:
-            print(entry, " : ", book[dicts][entry])
+
+
+def search():
+    search_result = []
+    search_data = input("Provide data to find: \n")
+    for i in book:
+        for k in book[i].items():
+            if k[1] == search_data:
+                search_result.append(i)
+
+    for i in search_result:
+        print(book[i])
