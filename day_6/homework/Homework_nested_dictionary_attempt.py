@@ -13,12 +13,16 @@
 ######################################################################################################################
 import sys
 """Phone book program"""
+
+"""varebiles"""
 main_menu_options = ['Q', '1', '2', '3']
-y_n_option = ['y','n']
+y_n_option = ['y', 'n']
 search_menu_options = ['1', '2', '3', '4', '5', '6', 'Q', 'B']
 book = {0: {'First Name': '_', 'Second Name': '_', 'Age': '_', 'Phone Number': '_', 'City': '_', 'Postal Code': '_',
             'Street': '_'}, }
-#work in progress: 1 - search menu
+
+"""Functions"""
+# work in progress: 1 - search menu
 def search_menu():
     search_menu_input = input("Choose action:\n"
                               "1 - show whole list\n2 - len of list\n3 - search name \n"
@@ -117,6 +121,8 @@ def main_menu():    # work in progress
     else:
         main_menu()
 
+
+"""Executive part"""
 main_menu()
 # entry()
 # print_book()
