@@ -2,9 +2,9 @@ import sys
 """Phone book program"""
 
 """varebiles"""
-main_menu_options = ['Q', '1', '2', '3']
+main_menu_options = ['Q', '1', '2', '3', '4']
 y_n_option = ['y', 'n']
-search_menu_options = ['1', '2', '3', '4', '5', '6', 'Q', 'B']
+search_menu_options = ['1', '2', '3', 'Q', 'B']
 """ dictionary "book" is an temporary solution, will be replaced by save/read file feature"""
 book = {
         0: {'First Name': '_', 'Second Name': '_', 'Age': '_', 'Phone Number': '_', 'City': '_', 'Postal Code': '_',
@@ -25,6 +25,24 @@ book = {
 """Functions"""
 
 
+def delete_entry():
+    """module stand for deleting entry from book dict, basis on user input ID
+    from book, include confirmation protect and wrong input protect"""
+    d_id = int(input("Provide ID to delete:\n"))
+    if d_id in book:
+        d_conf = input(f"Do you really wanna delete:\n {book[d_id]}?\n (y/n):\n").lower()
+        if d_conf in y_n_option:
+            if d_conf == 'y':
+                del book[d_id]
+                print(f"{d_id} successfully deleted!")
+            else:
+                main_menu()
+        else:
+            wrong_input()
+    else:
+        print(f"there is no entry with id {d_id}")
+        wrong_input()
+
 def search():
     """Search module, looks for value in every nested dictionary, returns value of parent dictionary,
     allow program to print full data of entry"""
@@ -41,7 +59,7 @@ def search():
 
 def search_menu():
     """choose action menu, description according to input string 1 - print whole dictionary, 2 len of dictionary,
-    3 data search, Q - quit, B - back to main menu #TODO: 4 which will stand for delete from dictionary"""
+    3 data search, Q - quit, B - back to main menu"""
     search_menu_input = input("Choose action:\n"
                               "1 - show whole list\n2 - len of list\n3 - search data \n"
                               "Q - quit\nB - Back to main menu\n\nYour choice:\n").upper()
@@ -77,8 +95,8 @@ def wrong_input():
         if user_input == 'y':
             main_menu()
         else:
-            print("sys exit in wrong_input")
-            sys.exit()
+            print("Going back to main menu")
+            main_menu()
     else:
         wrong_input()
 
@@ -137,6 +155,9 @@ def main_menu():
     elif user_first_input == '2':
         entry()
         print_book()
+        main_menu()
+    elif user_first_input == '3':
+        delete_entry()
         main_menu()
     else:
         main_menu()
