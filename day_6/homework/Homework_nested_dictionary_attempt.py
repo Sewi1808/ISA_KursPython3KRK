@@ -25,18 +25,19 @@ book = {
 
 """Functions"""
 
-def force(user_input):
-    if user_input in force():
-        if user_input == 'force_quit':
-            print("Bye!")
-            sys.exit()
-        elif user_input == 'fq':
-            print("Bye!")
-            sys.exit()
-        elif user_input == 'force_back':
-            print("going back to main menu")
-        elif user_input == 'fb':
-            print("going back to main menu")
+#under construct - option to skip adding values
+# def force(user_input=""):
+#     if user_input in force():
+#         if user_input == 'force_quit':
+#             print("Bye!")
+#             sys.exit()
+#         elif user_input == 'fq':
+#             print("Bye!")
+#             sys.exit()
+#         elif user_input == 'force_back':
+#             print("going back to main menu")
+#         elif user_input == 'fb':
+#             print("going back to main menu")
 
 
 def delete_entry():
@@ -129,12 +130,19 @@ def entry():
     """
 
     first_name = input("Provide first name: \n")
+#    force(first_name)
     second_name = input("Provide second name: \n")
+#    force(second_name)
     age = input("Provide Age: \n")
+#    force(age)
     phone_number = input("Provide phone number: \n")
+#    force(phone_number)
     city = input("Provide city: \n")
+#    force(city)
     postal_code = input("Provide postal code: \n")
+#    force(postal_code)
     street = input("Provide street: \n")
+#    force(street)
 
     if first_name == second_name == phone_number == age == city == postal_code == street == "":
         # check if user provide 7 times nothing, if yes just pass
