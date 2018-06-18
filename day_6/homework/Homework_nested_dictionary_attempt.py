@@ -2,6 +2,7 @@ import sys
 """Phone book program"""
 
 """varebiles"""
+force_input = ['force_quit', 'fq', 'force_back', 'fb']
 main_menu_options = ['Q', '1', '2', '3', '4']
 y_n_option = ['y', 'n']
 search_menu_options = ['1', '2', '3', 'Q', 'B']
@@ -24,6 +25,19 @@ book = {
 
 """Functions"""
 
+def force(user_input):
+    if user_input in force():
+        if user_input == 'force_quit':
+            print("Bye!")
+            sys.exit()
+        elif user_input == 'fq':
+            print("Bye!")
+            sys.exit()
+        elif user_input == 'force_back':
+            print("going back to main menu")
+        elif user_input == 'fb':
+            print("going back to main menu")
+
 
 def delete_entry():
     """module stand for deleting entry from book dict, basis on user input ID
@@ -42,6 +56,7 @@ def delete_entry():
     else:
         print(f"there is no entry with id {d_id}")
         wrong_input()
+
 
 def search():
     """Search module, looks for value in every nested dictionary, returns value of parent dictionary,
@@ -95,8 +110,8 @@ def wrong_input():
         if user_input == 'y':
             main_menu()
         else:
-            print("Going back to main menu")
-            main_menu()
+            print("Bye!")
+            sys.exit()
     else:
         wrong_input()
 
