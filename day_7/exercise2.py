@@ -1,4 +1,5 @@
 import csv
+import sys
 
 lista1 = ['Imie', 'Nazwisko', 'Adres', 'Telefon']
 lista2 = ['Joanna', 'Kowalska', 'Gdansk Przytulna', '64 654-65-45']
@@ -8,10 +9,10 @@ lista_list = [lista1, lista2, lista3]
 
 dict_list = {0: lista1, 1: lista2, 2: lista3}
 
-with open('test_csv.csv', 'w+') as csvfile:
-    writer = csv.DictWriter(csvfile, fieldnames= 'fieldnames')
-
+with open('mycsv.csv', 'w+') as csvfile:
+    writer = csv.DictWriter(csvfile, fields)
     writer.writeheader()
-    writer.writerows(dict_list)
+    for k in dict_list:
+    writer.writerows(dict_list.items())
     csvfile.seek(0, 0)
     print(open(csvfile))
