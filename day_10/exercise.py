@@ -11,3 +11,5 @@ class Hello:
 
 h = Hello()
 h.world()
+
+"""Wikibooks.org -> zanurkuj w Pythonie"""
