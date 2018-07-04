@@ -1,5 +1,5 @@
 #ksiazka kucharska, TODO: dokonczyc w domu
-# tworzenie skladnikow, wyswietlanie przepisow (repr)
+#tworzenie skladnikow, wyswietlanie przepisow (repr)
 #zliczanie skladnikow (skladnik - ilosc)
 #wysukiwanie przepisu \/
 #typ przepisu (obiad/Deser/Zupa etc)
@@ -25,4 +25,8 @@ class Recipe:
 
 class Ingredient:
     """Nazwa"""
-    pass
+    def __init__(self, ingredient):
+        self.ingredient = ingredient
+
+    def __repr__(self):
+        return self.__str__()
