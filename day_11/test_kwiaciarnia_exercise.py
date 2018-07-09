@@ -3,6 +3,9 @@ import unittest
 from .kwiaciarnia_exercise import Kwiat
 from .kwiaciarnia_exercise import Bukiet
 
+if __name__ == "__main__":
+    unittest.main()
+
 
 class TestKwiat(unittest.TestCase):
 
@@ -21,6 +24,16 @@ class TestKwiat(unittest.TestCase):
 class TestBukiet(unittest.TestCase):
 
     def test_if_constructor_return_Bukiet_instance(self):
-        k = Bukiet("Tulip")
+        b = Bukiet("Tulip")
 
-        self.assertIsInstance(k, Bukiet)
+        self.assertIsInstance(b, Bukiet)
+
+    def test_if_instance_has_attrib(self):
+        b = Bukiet("Tulip")
+
+        self.assertTrue(hasattr(b, "zbior_kwiatow"))
+
+    def test_if_lilly_is_in_Bukiet_instance(self):
+        b = Bukiet(["Tulip", "Lilly", "Rose"])
+
+        self.assertIn('Lilly', b.zbior_kwiatow)
