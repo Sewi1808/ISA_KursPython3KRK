@@ -10,7 +10,6 @@ class Kwiat:
         return self.__str__()
 
 
-
 class Bukiet:
     def __init__(self, zbior_kwiatow):
         self.zbior_kwiatow = zbior_kwiatow
@@ -45,17 +44,17 @@ class Kwiaciarnia:
             cls.kwiaty.append(kwiat)
 
 
-tulipan = Kwiat(5, 'tulipan')
-print(tulipan.rodzaj)
-print(tulipan.cena)
-
-b = Bukiet([tulipan, tulipan])
-print(b.zbior_kwiatow)
-print("Cena: ", b.cena)
-
-kw = Kwiaciarnia()
-kw.dodaj_bukiet(b)
-kw.dodaj_kwiat(tulipan, ilosc=10)
-
-print(kw.bukiety)
-print(kw.kwiaty)
+# tulipan = Kwiat(5, 'tulipan')
+# print(tulipan.rodzaj)
+# print(tulipan.cena)
+#
+# b = Bukiet([tulipan, tulipan])
+# print(b.zbior_kwiatow)
+# print("Cena: ", b.cena)
+#
+# kw = Kwiaciarnia()
+# kw.dodaj_bukiet(b)
+# kw.dodaj_kwiat(tulipan, ilosc=10)
+#
+# print(kw.bukiety)
+# print(kw.kwiaty)
